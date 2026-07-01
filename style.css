@@ -1,0 +1,323 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS (Design System)
+   ========================================================================== */
+:root {
+    --primary: #1e3a8a;      /* Azul Escuro (Solidez Acadêmica) */
+    --accent: #0ea5e9;       /* Azul Ciano (Inovação Tecnológica) */
+    --dark: #0f172a;         /* Grafite Escuro para alta leitura de textos */
+    --light: #f8fafc;        /* Fundo claro para descanso visual */
+    --white: #ffffff;
+    --gray-border: #e2e8f0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+section {
+    padding: 70px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   3. SEÇÃO HERO (Ajustada para 2 Colunas com Imagem)
+   ========================================================================== */
+/* ==========================================================================
+   3. SEÇÃO HERO (Foto no lado esquerdo)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(135deg, var(--primary), #0f172a);
+    color: var(--white);
+    padding: 80px 20px;
+    max-width: 100%;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left; /* Alinha o texto à esquerda combinando com a nova posição */
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* Ajuste sutil para acomodar melhor títulos acadêmicos longos */
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #cbd5e1;
+}
+
+.hero-image-wrapper {
+    flex: 0 0 auto;
+}
+
+/* Foto Retangular com cantos arredondados */
+.hero-img {
+    width: 290px;
+    height: auto;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid var(--accent);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.hero-social-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+}
+
+.hero-social-links a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    padding: 8px 12px; /* Ligeiro ajuste de padding para melhorar o clique */
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Impede que o texto "Lattes" ou "GitHub" quebre em duas linhas */
+}
+
+.hero-social-links a:hover {
+    background-color: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0284c7;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. CONTEÚDO (Bio, Cards e Publicações)
+   ========================================================================== */
+.bio-content {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid var(--gray-border);
+    text-align: justify; /* Alinhamento justificado mantém o padrão formal acadêmico */
+}
+
+.bio-content p {
+    margin-bottom: 20px; /* Mais espaçamento entre os parágrafos de formação */
+}
+
+.bio-content p:last-child {
+    margin-bottom: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid var(--gray-border);
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.pub-list {
+    list-style: none;
+}
+
+.pub-item {
+    background: var(--white);
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.pub-meta {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   5. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 35px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-border);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gray-border);
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.btn-submit {
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   6. RODAPÉ E RESPONSIVIDADE (Mobile)
+   ========================================================================== */
+footer {
+    background-color: var(--dark);
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+.footer-sub {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    color: #64748b;
+}
+
+/* Comportamento em Telas Menores */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-container {
+        flex-direction: column; /* No celular, a foto fica no topo e o texto embaixo */
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-text {
+        text-align: center; /* Centraliza o texto apenas em telas pequenas */
+    }
+    
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+    
+    section {
+        padding: 45px 15px;
+    }
+}

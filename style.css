@@ -63,6 +63,7 @@ header {
     text-decoration: none;
 }
 
+/* 1. Primeiro, ajuste o contêiner dos links para zerar os espaços nativos e alinhar os itens */
 .nav-links {
     display: flex;
     list-style: none;
